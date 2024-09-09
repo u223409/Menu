@@ -1,0 +1,109 @@
+package Menu;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
+import javafx.scene.layout.HBox;
+import java.time.LocalDate;
+import javafx.stage.Stage;
+
+  
+public class Menu extends Application  {
+@Override
+public void start(Stage primaryStage) throws Exception {
+primaryStage.setTitle("Module 3 Menu");
+MenuItem menuItem1 = new MenuItem("Menu Option 1");
+MenuItem menuItem2 = new MenuItem("Menu Option 2");
+MenuItem menuItem3 = new MenuItem("Menu Option 3");
+MeniItem menuItem4 = new MenuItem("Menu Option 4");
+menuItem3.setOnAction((EventHandler<ActionEvent>) new EventHandler<ActionEvent>() {
+
+	menuItem1.setOnAction(event->{
+		  
+	    // launch the application 
+	    public void start(Stage s) 
+	    { 
+	        // set title for the stage 
+	        s.setTitle("creating date picker"); 
+	  
+	        // create a tile pane 
+	        TilePane r = new TilePane(); 
+	  
+	        // create a date picker 
+	        DatePicker d = new DatePicker(); 
+
+	      public void handle(ActionEvent event) {
+	        	System.out.println("The current time is:" + date_picker_1);
+	        	}
+	    }  
+	@Override
+menuItem2.setOnAction(event->{
+	try{
+
+		String file = "Menu.txt";
+
+		FileWriter fileWriter = new FileWriter(file);
+
+		fileWriter.write(userInput); 
+
+		fileWriter.close();
+
+		lblStatus.setText("Done");
+
+	} catch (IOException e) {
+
+		e.printStackTrace();
+
+	}
+System.out.println("Option 2:" + typed text);
+});
+MenuButton menuButton = new MenuButton("Options", null, menuItem1, menuItem2, menuItem3);
+HBox hbox = new HBox(menuButton);
+Scene scene = new Scene(hbox, 200, 100);
+primaryStage.setScene(scene);
+primaryStage.show();
+}
+@Override
+menuItem3.setOnAction(event->{
+    stage.setTitle("ColorPicker");
+    Scene scene = new Scene(new HBox(20), 400, 100);
+    HBox box = (HBox) scene.getRoot();
+    box.setPadding(new Insets(5, 5, 5, 5));          
+         
+    final ColorPicker colorPicker = new ColorPicker();
+    colorPicker.setValue(Color.CORAL);
+    
+    final Text text = new Text("Random Color Picker!");
+    text.setFont(Font.font ("Green", 105));
+    text.setFill(colorPicker.getValue());
+    
+    colorPicker.setOnAction(new EventHandler() {
+        public void handle(Event t) {
+            text.setFill(colorPicker.getValue());               
+        }
+    });
+
+    box.getChildren().addAll(colorPicker, text);
+
+    stage.setScene(scene);
+    stage.show();
+}
+@Override
+menuItem4.setOnAction(event->{
+System.out.println("Option 4:");
+});
+MenuButton menuButton = new MenuButton("Options", null, menuItem1, menuItem2, menuItem3);
+HBox hbox = new HBox(menuButton);
+Scene scene = new Scene(hbox, 200, 100);
+primaryStage.setScene(scene);
+primaryStage.show();
+exit
+}
+}
+public static void main(String[] args) {
+Application.launch(args);
+}
+}
